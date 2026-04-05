@@ -5,7 +5,7 @@ export const createExperienceSchema = z.object({
   description: z.string().min(1, 'Description is required'),
   location:    z.string().min(1, 'Location is required'),
   price:       z.number().int().nonnegative('Price must be a non-negative integer'),
-  start_time:  z.iso.datetime({ message: 'start_time must be a valid ISO datetime' }),
+  start_time:  z.string().datetime({ message: 'start_time must be a valid ISO datetime' }),
 });
 
 export const listExperiencesSchema = z.object({
